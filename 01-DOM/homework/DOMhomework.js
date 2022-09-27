@@ -61,23 +61,27 @@ ToDo.prototype.completeToDo = function () {
 //    8) Devolver la variable toDoShell
 
 
-function buildToDo(todo, index) {
+function buildToDo(todo, index) { // {description: "", complete: false}
   // Tu código acá:
 
-  let toDoShell = document.createElement('div');
+  let toDoShell = document.createElement('div'); // <div class = 'toDoShell'></div>
   toDoShell.className = 'toDoShell';
-  let toDoText = document.createElement('span');
-  toDoText.innerHTML = todo.description;
-  toDoText.id = index;
+  let toDoText = document.createElement('span'); 
+  toDoText.innerHTML = todo.description;  // <span>hola</span>
+  toDoText.id = index; // <span id=(valor del index q sera un numero y llega por parametro)</span>
 
   if (todo.complete) {
     toDoText.className = 'completeText'
   }
 
-  toDoShell.appendChild(toDoText);
+  toDoShell.appendChild(toDoText);  //<div class= 'toDoShell'>
+  //                                  < span id=3> hola</span>
+  //                                  </div>
 
+  toDoText.addEventListener('click', completeToDo);
 
   return toDoShell;
+
 }
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
@@ -90,8 +94,19 @@ function buildToDos(toDos) {
 let array = toDos.map(function(todo, index){
   return buildToDo(todo, index);
 })
+//otra forma con arrow function
+// return toDos.map((todo, index) => buildToDo(todo, index))
+
+//otra forma mas simplificada
+//return toDos.map(buildToDo)
+
+
+// [<div class ='todoDoShell'><span id = 0 > hola >/span> </div>,
+//<div class ='todoDoShell'><span id = 1 > hola >/span> </div>,
+//<div class ='todoDoShell'><span id = 2 > hola >/span> </div>]
 
 return array;
+
 }
 
 
@@ -109,7 +124,7 @@ function displayToDos() {
 
   let toDoContainer = document.getElementById('toDoContainer');
 
-  toDoContainer.innerHTML = "";
+  toDoContainer.innerHTML = ""; //<div id='toDoContainer'>""</div>
 
   let build = buildToDos(toDoItems);
 
