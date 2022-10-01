@@ -54,6 +54,14 @@ $("#search").click(searchFriend);
  * server, and if the request is successful, it displays a message, clears the input field, and calls
  * the friends() function.
  */
+
+/**
+ * If the idCruz parameter is a number, then set the id variable to the value of idCruz. Otherwise, set
+ * the id variable to the value of the inputDelete element.
+ * @param idCruz - the id of the friend to be deleted
+ */
+
+
 let deleteFriend = (idCruz) => {
   if (typeof idCruz === 'number') {
     id = idCruz

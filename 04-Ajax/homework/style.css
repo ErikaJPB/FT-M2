@@ -1,6 +1,6 @@
 body {
      
-     display: flex;
+     display:flex;
      flex-direction:column;
     justify-content: justify;
      align-items: center;
@@ -9,14 +9,15 @@ body {
      font-family: Raleway;
      font-size: 40px;
      background-color: #ffe5d9;
-     cursor: pointer
+     cursor: pointer;
+     margin:16px;
+     margin-bottom: 32px;
 }
 
 .title {
     margin: 0px;
     margin-bottom: .5rem;
 }
-
      button {
         background-color: #9d8189;
         color: white;
@@ -24,6 +25,7 @@ body {
         font-family: Raleway;
         flex-wrap: wrap;
         cursor: pointer;
+        margin-bottom: .2rem;
         
     
      }
@@ -41,6 +43,11 @@ body {
         border-radius: .1rem;
         border-width: 1px;
         border-spacing: 10px;
+        border-width: .2em;
+        padding: 10px;
+        bottom: 5px;
+        top:15px;
+
         
 
 
