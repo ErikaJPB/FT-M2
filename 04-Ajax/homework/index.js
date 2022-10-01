@@ -19,7 +19,8 @@ let friends = () => {
 // })
 
     data.forEach((element) =>
-      $(`<li id = ${element.id}>${element.name} X</li>`).appendTo("ul")
+      $(`<li id = "${element.id}">${element.name}
+      <button id="${element.id}" onclick="deleteFriend(${element.id})"> X </button></li>`).appendTo("ul")
     );
   });
 };
@@ -53,16 +54,21 @@ $("#search").click(searchFriend);
  * server, and if the request is successful, it displays a message, clears the input field, and calls
  * the friends() function.
  */
-let deleteFriend = () => {
-  let input = $("#inputDelete").val();
+let deleteFriend = (idCruz) => {
+  if (typeof idCruz === 'number') {
+    id = idCruz
+  } else {
+    id = $("#inputDelete").val();
+  }
 
-  if (input) {
+
+  if (id) {
     $.ajax({
-      url: `${URL}/${input}`,
+      url: `${URL}/${id}`,
       type: "DELETE",
       success: function () {
         $("#success").text("Tu amigo ha sido borrado con exito");
-        $("#inputDelete").val("");
+       // $("#inputDelete").val("");
         friends();
       },
     });

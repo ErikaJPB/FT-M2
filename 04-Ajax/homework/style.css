@@ -1,0 +1,49 @@
+body {
+     
+     display: flex;
+     flex-direction:column;
+    justify-content: justify;
+     align-items: center;
+     height: 100vh;
+     margin: 0px;
+     font-family: Raleway;
+     font-size: 40px;
+     background-color: #ffe5d9;
+     cursor: pointer
+}
+
+.title {
+    margin: 0px;
+    margin-bottom: .5rem;
+}
+
+     button {
+        background-color: #9d8189;
+        color: white;
+        font-size: 20px;
+        font-family: Raleway;
+        flex-wrap: wrap;
+        cursor: pointer;
+        
+    
+     }
+
+
+
+     input {
+        border-color: black;
+        background-color: #ffe5d9;
+        padding: .5rem;
+        padding-bottom: .3rem;
+        font-family: Raleway;
+        font-size: medium;
+        border-style:ridge;
+        border-radius: .1rem;
+        border-width: 1px;
+        border-spacing: 10px;
+        
+
+
+
+
+     }
