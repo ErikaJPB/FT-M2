@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import './App.css';
 import Nav from './components/Nav.jsx';
 import Cards from './components/Cards.jsx';
-
+//import axios from 'axios';
 
 export default function App() {
 
@@ -11,7 +11,11 @@ export default function App() {
 
   const apiKey = '4ae2636d8dfbdc3044bede63951a019b'
 
- 
+  // function onSearch  (ciudad)  {
+  //   axios(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
+  //   .then((response) =>setCities(cities => [cities, response.data]))
+  // }
+  // //data es propio de axios
 
       function onSearch(ciudad) {
         fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
